@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 
 export const Nav = () => {
@@ -61,11 +62,12 @@ export const Nav = () => {
 
                 {/* Logo and Desktop Menu */}
                 <div className="hidden sm:flex sm:items-center sm:space-x-4">
-                    <img
+                    <Image
                         className="h-8 w-auto"
-                        src="https://teampassword.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fteampassword-logo-icon.24bcd80d.png&w=128&q=75"
+                        src={"/logo.jpg"}
                         alt="Your Company"
-                       
+                        width={32} // Adjust as needed
+                        height={32} // Adjust as needed
                     />
                     <a href="#" className="text-sm font-medium text-white hover:text-gray-300" aria-current="page">Plans & Pricing</a>
                     <a href="#" className="text-sm font-medium text-white hover:text-gray-300">Product Tour</a>
@@ -84,7 +86,7 @@ export const Nav = () => {
 
             {/* Mobile Menu */}
             <div
-                className={`sm:hidden ${isOpen ? 'block' : 'hidden'} absolute inset-x-0 top-16 bg-gray-800 w-full`}
+                className={`sm:hidden ${isOpen ? 'block' : 'hidden'} absolute inset-x-0 top-16 bg-gray-800 w-5/6`}
                 ref={menuRef}
             >
                 <div className="relative w-full">
